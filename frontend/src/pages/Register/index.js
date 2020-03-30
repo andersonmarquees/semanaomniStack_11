@@ -83,9 +83,9 @@ export default function Register(){
                             onChange={e => setUf(e.target.value)}
                         />
                     </div>
-
-
-                    <button className="button" type="submit">Cadastrar</button>
+                    <button className="button" type="submit">
+                        Cadastrar
+                    </button>
                 </form>
             </div>
         </div>

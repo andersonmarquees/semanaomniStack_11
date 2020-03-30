@@ -15,7 +15,8 @@ export default function NewIncident(){
     const history = useHistory();
 
     async function handleNewIncidents(e){
-        e.prenventDefault();
+        e.preventDefault();
+        
 
         const data = {
             title,
@@ -24,10 +25,8 @@ export default function NewIncident(){
         };
         try{
             await api.post('incidents', data, {
-                headers: {
-                    Authorization: ongId,
-                }
-            })
+                headers: { Authorization: ongId }
+            });
             history.push('/profile');
         }catch(err){
             alert('Erro ao cadastrar um caso.')
@@ -42,7 +41,7 @@ export default function NewIncident(){
 
                     <h1>Cadastrar novo caso</h1>
                     <p>Descreva o caso detalhadamente para encontrar um herói para resolver isso. </p>
-                    <Link className="back-link" to="/profile">
+                    <Link className="back-link" to="/">
                         <FiArrowLeft size={16} color="#E02041"/>
                         Voltar para home
                     </Link>

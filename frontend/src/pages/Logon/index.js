@@ -18,6 +18,12 @@ export default function Logo(){
 
         try{
             const response = await api.post('sessions', { id });
+
+            //novo
+            localStorage.setItem("ongId", id);
+            localStorage.setItem("ongName", response.data.name);
+
+
             history.push('/profile');
             
         }catch(err){
